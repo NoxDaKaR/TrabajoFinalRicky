@@ -28,7 +28,6 @@ def fromTemplateIntoCard(templ):
 def fromRepositoryIntoCard(repo_dict):
     card = Card(
                         id=repo_dict['id'],
-
                         url=repo_dict['url'],
                         name=repo_dict['name'],
                         status=repo_dict['status'],
