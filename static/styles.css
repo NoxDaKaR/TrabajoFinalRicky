@@ -1,31 +1,174 @@
+/* ================= General ================= */
 body {
     color: #566787;
-    background: #f5f5f5;
     font-family: 'Roboto', sans-serif;
+    background: url('https://i.redd.it/lwwt86ci5anz.jpg') center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
-.table-responsive {
-    margin: 30px 0;
-}
-
-.table-wrapper {
-    min-width: 1000px;
-    background: #fff;
+main {
     padding: 20px;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay semi-transparente */
+}
+
+/* ================= Títulos ================= */
+h1 {
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 0 0 10px #32CD32;
+}
+
+h2.text-center {
+    color: #32CD32;
+    margin-top: 50px;
+    text-shadow: 0 0 10px rgba(250,250,250);
+}
+
+h3 {
+    color: white; 
+    font-size: 30px;
+    text-shadow: #32CD32;
+    text-align: center;
+}
+
+.portal-text {
+    color: #32CD32; 
+    text-shadow: 0 0 10px #000000; 
+}
+/* Opcional: Hover con efecto */
+.portal-text:hover {
+    color: #32CD32; 
+    text-shadow: 0 0 15px #ffffff; 
+}
+
+
+/* ================= Tarjetas ================= */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+    border: 2.5px solid transparent; /* Asegura que el borde sea visible */
 }
 
-.table-title {
-    padding-bottom: 10px;
-    margin: 0 0 10px;
-    min-width: 100%;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.table-title h2 {
-    margin: 8px 0 0;
-    font-size: 22px;
+.card.alive {
+    border-color: green;
 }
 
+.card.dead {
+    border-color: red;
+}
+
+.card.unknown {
+    border-color: orange;
+}
+
+/* Imágenes */
+.card-img-top {
+    border-radius: 8px 0 0 8px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texto dentro de las tarjetas */
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    margin-bottom: 8px;
+    color: #566787;
+}
+
+.text-body-secondary {
+    color: #666;
+    font-size: 14px;
+}
+
+.pagination li a {
+    border: none;
+    font-size: 14px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    margin: 0 3px;
+    line-height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(50, 205, 50, 0.2); /* Verde translúcido */
+    box-shadow: 0 0 5px rgba(50, 205, 50, 0.4); /* Efecto brillante */
+    transition: all 0.3s ease-in-out;
+}
+
+.pagination li a:hover {
+    background: #32CD32; /* Verde brillante */
+    color: black;
+    box-shadow: 0 0 10px rgba(50, 205, 50, 0.7);
+}
+
+.pagination li.active a {
+    background: #32CD32;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(50, 205, 50, 0.7);
+}
+
+.pagination li.disabled a {
+    background: rgba(204, 204, 204, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+
+/* Favoritos */
+.card-footer {
+    padding: 5px;
+    text-align: center;
+}
+
+.card-footer .btn {
+    width: 80%;
+    padding: 5px 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.btn-favorito {
+    background-color: #32CD32; 
+    color: black;
+    border: 1px solid black; 
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-favorito:hover {
+    background-color: #FF8C00; 
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.7); 
+}
+
+
+/* ================= Buscador ================= */
 .search-box {
     position: relative;
     float: right;
@@ -51,6 +194,29 @@ body {
     left: 10px;
 }
 
+/* ================= Tablas ================= */
+.table-responsive {
+    margin: 30px 0;
+}
+
+.table-wrapper {
+    min-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.table-title {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+    min-width: 100%;
+}
+
+.table-title h2 {
+    margin: 8px 0 0;
+    font-size: 30px;
+}
+
 table.table tr th,
 table.table tr td {
     border-color: #e9e9e9;
@@ -64,38 +230,7 @@ table.table-striped.table-hover tbody tr:hover {
     background: #f5f5f5;
 }
 
-table.table th i {
-    font-size: 13px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-table.table td:last-child {
-    width: 130px;
-}
-
-table.table td a {
-    color: #a0a5b1;
-    display: inline-block;
-    margin: 0 5px;
-}
-
-table.table td a.view {
-    color: #03A9F4;
-}
-
-table.table td a.edit {
-    color: #FFC107;
-}
-
-table.table td a.delete {
-    color: #E34724;
-}
-
-table.table td i {
-    font-size: 19px;
-}
-
+/* ================= Paginación ================= */
 .pagination {
     float: right;
     margin: 0 0 5px;
@@ -106,37 +241,44 @@ table.table td i {
     font-size: 95%;
     width: 30px;
     height: 30px;
-    color: #999;
+    color: #fff;
     margin: 0 2px;
     line-height: 30px;
     border-radius: 30px !important;
     text-align: center;
     padding: 0;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .pagination li a:hover {
-    color: #666;
+    color: #32CD32;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .pagination li.active a {
-    background: #03A9F4;
-}
-
-.pagination li.active a:hover {
-    background: #0397d6;
+    background: #32CD32;
 }
 
 .pagination li.disabled i {
-    color: #ccc;
+    color: #32CD32;
 }
 
-.pagination li i {
-    font-size: 16px;
-    padding-top: 6px
+/* ================= Pie de página ================= */
+.custom-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro sólido */
+    color: white;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.hint-text {
-    float: left;
-    margin-top: 6px;
-    font-size: 95%;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }

@@ -1,4 +1,7 @@
-{% extends 'header.html' %} {% block content %}
+{% extends 'header.html' %} 
+{% block content %} 
+{% load static %}
+<body style="background: url('https://i.redd.it/lwwt86ci5anz.jpg') center center fixed; background-size: cover; margin: 0; padding: 0;">
 <main>
     <h1 class="text-center">Buscador Rick & Morty</h1>
 
@@ -7,7 +10,7 @@
         <nav aria-label="...">
             <ul class="pagination">
                 <li class="page-item disabled">
-                    <a class="page-link">⬅️</a>
+                    <a class="page-link">🡰</a>
                 </li>
                 <li class="page-item active" aria-current="page">
                     <a class="page-link" href="#">1</a>
@@ -15,12 +18,15 @@
                 <li class="page-item">
                     <a class="page-link" href="#">2</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="#">➡️</a>
+                    <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">🡲</a>
                 </li>
             </ul>
         </nav>
+        
     </div>
 
     <div class="d-flex justify-content-center" style="margin-bottom: 1%">
@@ -31,6 +37,7 @@
             <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
     </div>
+    
     <!--Esta seccion da un borde de color segun el estado del personaje-->
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% if images|length == 0 %}
@@ -70,8 +77,8 @@
                                 <input type="hidden" name="status" value="{{ img.status }}">
                                 <input type="hidden" name="last_location" value="{{ img.last_location }}">
                                 <input type="hidden" name="first_seen" value="{{ img.first_seen }}"> {% if img in favourite_list %}
-                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white" disabled>✔️ Ya está en favoritos</button> {% else %}
-                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white">❤️ Añadir a favoritos</button> {% endif %}
+                                <button type="submit" class="btn btn-favorito btn-sm float-left" style="color:white" disabled>✔️ Ya está en favoritos</button> {% else %}
+                                <button type="submit" class="btn btn-favorito btn-sm float-left" style="color:white">❤️ Añadir a favoritos</button> {% endif %}
                             </form>
                         </div>
                         {% endif %}
