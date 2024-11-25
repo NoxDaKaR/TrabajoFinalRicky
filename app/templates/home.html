@@ -10,19 +10,19 @@
         <nav aria-label="...">
             <ul class="pagination">
                 <li class="page-item disabled">
-                    <a class="page-link">🡰</a>
+                    <a style = "background-color: rgba(94, 94, 94, 0.747)" class="page-link" href="#">🡰</a>
                 </li>
                 <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">1</a>
+                    <a style = "background-color: rgba(94, 94, 94, 0.747)" class="page-link" href="#">1</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="#">2</a>
+                    <a style = "background-color: rgba(94, 94, 94, 0.747)" class="page-link" href="#">2</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="#">3</a>
+                    <a style = "background-color: rgba(94, 94, 94, 0.747)" class="page-link" href="#">3</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="#">🡲</a>
+                    <a style = "background-color: rgba(94, 94, 94, 0.747)" class="page-link" href="#">🡲</a>
                 </li>
             </ul>
         </nav>
@@ -33,7 +33,7 @@
         <!-- Buscador del sitio -->
         <form class="d-flex" action="{% url 'buscar' %}" method="POST">
             {% csrf_token %}
-            <input class="form-control me-2" type="search" name="query" placeholder="Escribí una palabra" aria-label="Search">
+            <input style = "background-color: rgba(231, 255, 225, 0.829); border-color: rgba(209, 255, 197, 0.747);" class="form-control me-2" type="search" name="query" placeholder="Escribí una palabra" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
     </div>

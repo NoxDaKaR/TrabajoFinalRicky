@@ -16,7 +16,7 @@ main {
 
 /* ================= Títulos ================= */
 h1 {
-    color: #fff;
+    color: rgba(150,232,47,1);
     font-size: 50px;
     text-align: center;
     text-shadow: 0 0 10px #32CD32;
@@ -48,7 +48,7 @@ h3 {
 
 /* ================= Tarjetas ================= */
 .card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(206, 220, 188, 0.9);
     border-radius: 8px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -183,7 +183,7 @@ h3 {
 }
 
 .search-box input:focus {
-    border-color: #3FBAE4;
+    border-color: #60e43f;
 }
 
 .search-box i {
