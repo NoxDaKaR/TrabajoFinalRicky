@@ -1,7 +1,11 @@
-{% extends 'header.html' %} {% block content %}
+{% extends 'header.html' %} 
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styleFavourites.css' %}">
 <div class="container-xl">
     <div class="table-responsive">
-        <div class="table-wrapper">
+        <div class="table-wrapper favoritos-wrapper">
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-8">
@@ -9,23 +13,23 @@
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover table-bordered">
-                <thead>
+            <table class="table table-striped table-hover table-bordered favoritos-table">
+                <thead class="tables">
                     <tr>
-                        <th>#</th>
-                        <th>Imagen</th>
-                        <th>Nombre <i class="fa fa-sort"></i></th>
-                        <th>Status</th>
-                        <th>Última ubicación <i class="fa fa-sort"></i></th>
-                        <th>Episodio inicial </th>
-                        <th>Acciones </th>
+                        <th class ="cth">#</th>
+                        <th class ="cth">Imagen</th>
+                        <th class ="cth">Nombre <i class="fa fa-sort"></i></th>
+                        <th class ="cth">Status</th>
+                        <th class ="cth">Última ubicación <i class="fa fa-sort"></i></th>
+                        <th class ="cth">Episodio inicial</th>
+                        <th class ="cth">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for favourite in favourite_list %}
                     <tr>
                         <td>-</td>
-                        <td><img src="{{ favourite.url }}" alt="" style="max-width: 200px; max-height: 200px;"></td>
+                        <td><img src="{{ favourite.url }}" alt="" class="favoritos-img"></td>
                         <td>{{ favourite.name }}</td>
                         <td>{{ favourite.status }}</td>
                         <td>{{ favourite.last_location }}</td>
@@ -34,7 +38,7 @@
                             <form method="post" action="{% url 'borrar-favorito' %}">
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value="{{ favourite.id }}">
-                                <button type="submit" class="btn" style="color:red"><i class="material-icons">&#xE872;</i></button>
+                                <button type="submit" class="btneliminarfav"><i class="material-icons">&#xE872;</i></button>
                             </form>
                         </td>
                     </tr>

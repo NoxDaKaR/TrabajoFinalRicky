@@ -1,0 +1,45 @@
+/* Tabla de favoritos */
+.favoritos-wrapper {
+    background: rgba(206, 220, 188, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.favoritos-table img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: rgba(131, 143, 115, 0.842);
+    background-color: rgba(206, 220, 188, 0.9);
+}
+
+table.table tr th, table.table tr td{
+    border-color: rgba(131, 143, 115, 0.842);
+    background-color: rgba(206, 220, 188, 0.9);   
+}
+
+.tables {
+    border-color: rgba(131, 143, 115, 0.842);
+    border-left: rgba(131, 143, 115, 0.842);
+    border-right: rgba(131, 143, 115, 0.842);
+    background-color: rgba(206, 220, 188, 0.9);
+}
+
+.btneliminarfav{
+    background-color: rgba(83, 83, 83, 0.308);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    
+}
+
+.btneliminarfav:hover{
+    background-color: rgba(255, 30, 30, 0.363);
+}
