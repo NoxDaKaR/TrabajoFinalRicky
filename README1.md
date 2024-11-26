@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f7039c63-d5a6-474c-9f5f-8b788dedfb68)Informe Trabajo Practico "Buscador Rick & Morty"
+Informe Trabajo Practico "Buscador Rick & Morty"
 Grupo 1 Integrantes = Castro, Contreras, Olmedo, Polcaro, Timiraos.
 El presente trabajo nos sirvió para desarrollar un ambiente de trabajo respecto a un
 repositorio remoto, donde los integrantes vivimos y tenemos horarios distintos en
